@@ -13,6 +13,13 @@ module Scadi
       # The children of this operation.
       attr_reader :children
 
+      # Adds an element as a child of this operation, also setting its parent to this.
+      def add_child(child)
+        children << child
+        child.parent = self
+      end
+      alias << add_child
+
       def domain
         # If all children have the same domain, use that. Otherwise, we dunno
         unique_domains = children.map(&:domain).uniq

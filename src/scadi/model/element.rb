@@ -6,7 +6,7 @@ module Scadi
     class Element
       extend Util::Abstract
 
-      def initialize(parent:)
+      def initialize(parent: nil)
         @parent = parent
         @modifiers = []
       end
