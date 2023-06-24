@@ -14,6 +14,8 @@ module Scadi
         attr_accessor :size
 
         def domain = :d3
+
+        def base_to_openscad = "cube(#{size.to_openscad});"
       end
     end
   end

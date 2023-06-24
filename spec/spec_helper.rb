@@ -10,4 +10,14 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  RSpec::Matchers.define :semantically_eq do |expected|
+    match do |actual|
+      expected.gsub(/\s+/, "") == actual.gsub(/\s+/, "")
+    end
+
+    failure_message do |actual|
+      "expected `#{expected}` to equal `#{actual}` when ignoring whitespace"
+    end
+  end
 end
