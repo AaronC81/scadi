@@ -1,7 +1,8 @@
+require_relative "../util"
+
 module Scadi
   module Engine
     class STL
-      Vector3 = Struct.new('Vector3', :x, :y, :z)
       Face = Struct.new('Face', :normal, :verteces)
 
       attr_reader :faces, :name, :metadata
