@@ -11,7 +11,7 @@ module Scadi
         @modifiers = []
       end
 
-      # The domain in which this element creates geometry. One of `:2d`, `:3d`, or `nil` if it is
+      # The domain in which this element creates geometry. One of `:d2`, `:d3`, or `nil` if it is
       # indeterminate for some reason.
       def domain = abstract!
 

@@ -1,4 +1,4 @@
-require_relative "shape"
+require_relative "../shape"
 
 module Scadi
   module Model
@@ -13,7 +13,7 @@ module Scadi
         # The size of this cube, as a `Vector3`
         attr_accessor :size
 
-        def domain = :3d
+        def domain = :d3
       end
     end
   end

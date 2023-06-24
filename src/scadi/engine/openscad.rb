@@ -3,7 +3,7 @@ require 'fileutils'
 module Scadi
   module Engine
     PATH = "/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD"
-    RENDER_TEMP = File.join(__dir__, "..", "..", "render")
+    RENDER_TEMP = File.join(__dir__, "..", "..", "..", "render")
 
     class OpenSCAD
       def self.prepare

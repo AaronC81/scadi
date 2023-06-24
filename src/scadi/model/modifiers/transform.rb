@@ -1,4 +1,4 @@
-require_relative "shape"
+require_relative "../modifier"
 
 module Scadi
   module Model
