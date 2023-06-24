@@ -13,7 +13,9 @@ describe "element" do
     "
 
     union = M::Operations::Union.new()
-    union << new_cube
+    3.times do
+      union << cube.dup
+    end
     expect(union.to_openscad).to semantically_eq "
       union() {
         transform([1, 2, 3]) cube([10, 20, 30]);

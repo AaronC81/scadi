@@ -14,3 +14,5 @@ require_relative "scadi/model/modifiers/transform"
 require_relative "scadi/model/operation"
 require_relative "scadi/model/operations/union"
 
+require_relative "scadi/dsl/dsl"
+
