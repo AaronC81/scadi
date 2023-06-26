@@ -14,7 +14,7 @@ require_relative "scadi/model/modifiers/translate"
 require_relative "scadi/model/modifiers/linear_extrude"
 
 require_relative "scadi/model/operation"
-require_relative "scadi/model/operations/union"
+require_relative "scadi/model/operations/boolean"
 
 require_relative "scadi/dsl/dsl"
 

@@ -26,23 +26,17 @@ module Scadi
         @operation = operation
       end
 
-      def cube(*size)
-        cube = Scadi::Model::Shapes::Cube.new(size: size)
-        @operation << cube
-        ModifierChainer.new(element: cube)
-      end
+      def cube(*size) = _handle(Scadi::Model::Shapes::Cube.new(size: size))
+      def square(*size) = _handle(Scadi::Model::Shapes::Square.new(size: size))
 
-      def square(*size)
-        square = Scadi::Model::Shapes::Square.new(size: size)
-        @operation << square
-        ModifierChainer.new(element: square)
-      end
+      def union(&block) = _handle(Scadi::Model::Operations::Union.new, &block)
+      def difference(&block) = _handle(Scadi::Model::Operations::Difference.new, &block)
+      def intersection(&block) = _handle(Scadi::Model::Operations::Intersection.new, &block)
 
-      def union(&block)
-        union = Scadi::Model::Operations::Union.new
-        @operation << union
-        Docile.dsl_eval(BodyBuilder.new(operation: union), &block)
-        ModifierChainer.new(element: union)
+      private def _handle(element, &block)
+        @operation << element
+        Docile.dsl_eval(BodyBuilder.new(operation: element), &block) if block
+        ModifierChainer.new(element: element)
       end
     end
 
