@@ -1,0 +1,9 @@
+union {
+  difference {
+    square(60)
+    square(40).translate(10)
+  }
+  square(20).translate(20)
+}
+  .extrude(20)
+
