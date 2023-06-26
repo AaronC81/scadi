@@ -7,7 +7,7 @@ module Scadi
       class Cube < Element
         def initialize(size:, **kw)
           super(**kw)
-          @size = size
+          @size = Vector3.from_array(size)
         end
 
         # The size of this cube, as a `Vector3`

@@ -1,6 +1,3 @@
-M = Scadi::Model
-V3 = Scadi::Vector3
-
 describe "element" do
   it 'can convert to OpenSCAD code' do
     cube = M::Shapes::Cube.new(size: V3.new(10, 20, 30))

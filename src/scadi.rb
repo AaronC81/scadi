@@ -7,6 +7,7 @@ require_relative "scadi/model/element"
 
 require_relative "scadi/model/shape"
 require_relative "scadi/model/shapes/cube"
+require_relative "scadi/model/shapes/square"
 
 require_relative "scadi/model/modifier"
 require_relative "scadi/model/modifiers/translate"

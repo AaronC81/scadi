@@ -8,8 +8,8 @@ module Scadi
         @element = element
       end
       
-      def translate(x, y, z=0)
-        @element.modifiers << Scadi::Model::Modifiers::Translate.new(offset: Vector3.new(x, y, z))
+      def translate(*offset)
+        @element.modifiers << Scadi::Model::Modifiers::Translate.new(offset: Vector3.from_array(offset))
         self
       end
 
@@ -26,10 +26,16 @@ module Scadi
         @operation = operation
       end
 
-      def cube(x, y, z)
-        cube = Scadi::Model::Shapes::Cube.new(size: Vector3.new(x, y, z))
+      def cube(*size)
+        cube = Scadi::Model::Shapes::Cube.new(size: size)
         @operation << cube
         ModifierChainer.new(element: cube)
+      end
+
+      def square(*size)
+        square = Scadi::Model::Shapes::Square.new(size: size)
+        @operation << square
+        ModifierChainer.new(element: square)
       end
 
       def union(&block)

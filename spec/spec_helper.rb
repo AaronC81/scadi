@@ -21,3 +21,7 @@ RSpec.configure do |config|
     end
   end
 end
+
+M = Scadi::Model
+V3 = Scadi::Vector3
+V2 = Scadi::Vector2
