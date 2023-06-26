@@ -8,8 +8,8 @@ module Scadi
         @element = element
       end
       
-      def transform(x, y, z=0)
-        @element.modifiers << Scadi::Model::Modifiers::Transform.new(offset: Vector3.new(x, y, z))
+      def translate(x, y, z=0)
+        @element.modifiers << Scadi::Model::Modifiers::Translate.new(offset: Vector3.new(x, y, z))
         self
       end
     end
