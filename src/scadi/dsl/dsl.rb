@@ -12,6 +12,12 @@ module Scadi
         @element.modifiers << Scadi::Model::Modifiers::Translate.new(offset: Vector3.new(x, y, z))
         self
       end
+
+      def linear_extrude(h)
+        @element.modifiers << Scadi::Model::Modifiers::LinearExtrude.new(height: h)
+        self
+      end
+      alias extrude linear_extrude
     end
 
     # Instance-eval'd
