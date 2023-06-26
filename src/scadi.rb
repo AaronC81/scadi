@@ -17,3 +17,6 @@ require_relative "scadi/model/operations/union"
 
 require_relative "scadi/dsl/dsl"
 
+require_relative "scadi/cli/logger"
+require_relative "scadi/cli/runner"
+

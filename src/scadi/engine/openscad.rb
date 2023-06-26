@@ -16,12 +16,21 @@ module Scadi
       def self.render(name, code)
         prepare
 
-        scad_path = File.join(RENDER_TEMP, "#{name}.scad")
-        stl_path = File.join(RENDER_TEMP, "#{name}.stl")
-        File.write(scad_path, code)
-
+        scad_path = save_to_scad(name, code)
+        stl_path = File.expand_path(File.join(RENDER_TEMP, "#{name}.stl"))
         system(PATH, scad_path, "--render", "-o", stl_path)
         raise "OpenSCAD error" unless $?.success?
+
+        stl_path
+      end
+
+      def self.save_to_scad(name, code)
+        prepare
+        
+        scad_path = File.expand_path(File.join(RENDER_TEMP, "#{name}.scad"))
+        File.write(scad_path, code)
+
+        scad_path
       end
     end
   end
